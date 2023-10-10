@@ -34,7 +34,6 @@ henlo
 
 ## Amanda
 
-
 Amanda was here :)
 
 ```{r}
@@ -42,10 +41,16 @@ data <- data.frame()
 
 ```
 
-## Ana
+### New analysis
 
+Amanda was also here
+
+```{r}
+print("La cucaracha, la cucarachaa")
+```
+
+## Ana
 
 ```{r}
 print("Viva Soria")
 ```
-
