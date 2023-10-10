@@ -26,7 +26,20 @@ editor: visual
 
 ### Load libraries
 
+```{r}
+library('tidyverse')
+library('broom')
+library('patchwork')
+```
+
 ### Load data
+
+```{r}
+#| message: false 
+biopsy <- read_csv("https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv")
+
+biopsy
+```
 
 ### Analysis
 
@@ -36,4 +49,4 @@ editor: visual
 
 ### 3. Variance
 
-### Discussion 
+### Discussion
