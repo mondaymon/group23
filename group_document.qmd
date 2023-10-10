@@ -34,7 +34,6 @@ henlo
 
 ## Amanda
 
-<<<<<<< HEAD
 Amanda was here :)
 
 ```{r}
@@ -49,4 +48,3 @@ data <- data.frame()
 ```{r}
 print("Viva Soria")
 ```
->>>>>>> f39093c6341b2c25ead50ada54de823315fc5784
