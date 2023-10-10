@@ -28,12 +28,19 @@ Print something
 print("Hola")
 ```
 
+### New feature
+jjfalkhglakdhglasghladksglakdnjhkj
+
 ## Monika
 
 henlo
 
 ## Amanda
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 94ff77edfdb13fe949b8ff7cf13bc5e78c7c8b87
 Amanda was here :)
 
 ```{r}
@@ -42,9 +49,10 @@ data <- data.frame()
 ```
 
 ## Ana
-=======
-## Ana
+
 
 ```{r}
 print("Viva Soria")
 ```
+
+
