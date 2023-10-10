@@ -67,10 +67,30 @@ print("La cucaracha, la cucarachaa")
 
 ## Ana
 
-s222797
+s222761
 
 ```{r}
 print("Viva Soria")
 ```
 
-s222797
+s222761
+
+```{r}
+library(ggplot2)
+
+# Generate the data
+my_data <- data.frame(x = rnorm(n = 5000,
+                               mean = 27,
+                               sd = 10))
+
+# Create the histogram
+my_data |>
+  ggplot(aes(x = x)) +
+  geom_histogram(binwidth = 1,
+                 color = "black",
+                 fill = "cornflowerblue") +
+  labs(title = "My Histogram",
+       x = "Values",
+       y = "Frequency") +
+  theme_minimal()
+```
