@@ -24,7 +24,7 @@ editor: visual
 
 ### 
 
-### Load libraries
+## Load libraries
 
 ```{r}
 library('tidyverse')
@@ -32,7 +32,7 @@ library('broom')
 library('patchwork')
 ```
 
-### Load data
+## Load data
 
 ```{r}
 #| message: false 
@@ -41,7 +41,7 @@ biopsy <- read_csv("https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv")
 biopsy
 ```
 
-### Analysis
+## Analysis
 
 ### 1. PCA
 
