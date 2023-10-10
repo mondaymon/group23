@@ -7,6 +7,10 @@ editor: visual
 ## Carlos
 
 ```{r}
+
+library(tidyverse)
+print("Try a cool plot")
+
 x <- c(1, 2, 3, 4, 5)
 y <- c(2, 4, 6, 8, 10)
 
@@ -29,6 +33,7 @@ print("Hola")
 ```
 
 ### New feature
+
 jjfalkhglakdhglasghladksglakdnjhkj
 
 ## Monika
@@ -54,23 +59,18 @@ data <- data.frame()
 
 ### New analysis
 
-
 Amanda was also here
-
-
 
 ```{r}
 print("La cucaracha, la cucarachaa")
 ```
 
-
 ## Ana
- s222797
+
+s222797
 
 ```{r}
 print("Viva Soria")
 ```
 
 s222797
-
-
