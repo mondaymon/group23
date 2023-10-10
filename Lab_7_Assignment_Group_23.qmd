@@ -1,0 +1,23 @@
+---
+title: "Lab_7_Assignment_Group_23"
+format:
+  html:
+    embed-resources: true
+editor: visual
+---
+
+## **Lab 7 Assignment: Group 23**
+
+# Lab 7: Collaborative Bio Data Science using GitHub via RStudio
+
+**Group 23, members:**
+
+-   Ana Pastor Mediavilla - s222761
+
+-   Carlos de Santiago León - s222766
+
+-   Laura Figueiredo Tor - s222797
+
+-   Monika Karolina Borkowska - s223203
+
+-   Amanda Jimenez Lobato - s233150
