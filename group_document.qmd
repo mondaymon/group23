@@ -6,12 +6,33 @@ editor: visual
 
 ## Carlos
 
+```{r}
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+
+plot(x, y, 
+     main = "Scatter Plot Example",
+     xlab = "X-axis",
+     ylab = "Y-axis",
+     pch = 19,       
+     col = "blue"
+)
+
+```
+
 ## Laura
+
+Print something
+
+```{r}
+print("Hola")
+```
 
 ## Monika
 
 ## Amanda
 
+<<<<<<< HEAD
 Amanda was here :)
 
 ```{r}
@@ -20,3 +41,10 @@ data <- data.frame()
 ```
 
 ## Ana
+=======
+## Ana
+
+```{r}
+print("Viva Soria")
+```
+>>>>>>> f39093c6341b2c25ead50ada54de823315fc5784
