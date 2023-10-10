@@ -33,14 +33,12 @@ jjfalkhglakdhglasghladksglakdnjhkj
 
 ## Monika
 
-henlo
+```{r}
+print('Henlo world')
+```
 
 ## Amanda
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 94ff77edfdb13fe949b8ff7cf13bc5e78c7c8b87
 Amanda was here :)
 
 ```{r}
@@ -49,10 +47,10 @@ data <- data.frame()
 ```
 
 ## Ana
-
+ s222797
 
 ```{r}
 print("Viva Soria")
 ```
-
+s222797
 
