@@ -21,3 +21,19 @@ editor: visual
 -   Monika Karolina Borkowska - s223203
 
 -   Amanda Jimenez Lobato - s233150
+
+### 
+
+### Load libraries
+
+### Load data
+
+### Analysis
+
+### 1. PCA
+
+### 2. Rotation matrix
+
+### 3. Variance
+
+### Discussion 
