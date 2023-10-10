@@ -45,6 +45,29 @@ biopsy
 
 ### 1. PCA
 
+```{r}
+pca_fit <- biopsy %>% 
+  select(where(is.numeric)) %>% 
+  prcomp(scale = TRUE)
+```
+
+```{r}
+pca_fit <- biopsy %>% 
+  select(where(is.numeric)) %>% 
+  scale() %>% 
+  prcomp()
+```
+
+```{r}
+pca_fit %>%
+  augment(biopsy) %>% 
+  ggplot(aes(.fittedPC1, .fittedPC2, color = outcome)) + 
+  geom_point(size = 1.5) +
+  scale_color_manual(values = c(malignant = "#D55E00", benign = "#0072B2")) +
+  theme_half_open(12) + 
+  background_grid()
+```
+
 ### 2. Rotation matrix
 
 ### 3. Variance
