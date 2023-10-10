@@ -100,3 +100,9 @@ my_data |>
        y = "Frequency") +
   theme_minimal()
 ```
+
+#### New feature soriano
+
+```{r}
+print("Resistencia numantina")
+```
