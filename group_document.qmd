@@ -52,11 +52,25 @@ data <- data.frame()
 
 ```
 
+### New analysis
+
+
+Amanda was also here
+
+
+
+```{r}
+print("La cucaracha, la cucarachaa")
+```
+
+
 ## Ana
  s222797
 
 ```{r}
 print("Viva Soria")
 ```
+
 s222797
+
 
