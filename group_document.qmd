@@ -24,6 +24,12 @@ plot(x, y,
 
 ```
 
+### New feature
+
+```{r}
+print("Remember to wake up and slay everyday!")
+```
+
 ## Laura
 
 Print something
