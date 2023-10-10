@@ -6,7 +6,27 @@ editor: visual
 
 ## Carlos
 
+```{r}
+x <- c(1, 2, 3, 4, 5)
+y <- c(2, 4, 6, 8, 10)
+
+plot(x, y, 
+     main = "Scatter Plot Example",
+     xlab = "X-axis",
+     ylab = "Y-axis",
+     pch = 19,       
+     col = "blue"
+)
+
+```
+
 ## Laura
+
+Print something
+
+```{r}
+print("Hola")
+```
 
 ## Monika
 
@@ -14,4 +34,8 @@ henlo
 
 ## Amanda
 
-## Ana 
+## Ana
+
+```{r}
+print("Viva Soria")
+```
