@@ -12,4 +12,11 @@ editor: visual
 
 ## Amanda
 
-## Ana 
+Amanda was here :)
+
+```{r}
+data <- data.frame()
+
+```
+
+## Ana
