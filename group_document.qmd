@@ -34,6 +34,12 @@ print("Hola")
 print('Henlo world')
 ```
 
+### New feature
+
+```{r}
+print('How was your day?')
+```
+
 ## Amanda
 
 Amanda was here :)
