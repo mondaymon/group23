@@ -22,6 +22,7 @@ editor: visual
 
 -   Amanda Jimenez Lobato - s233150
 
+
 ## 1. Load libraries
 
 ```{r}
@@ -35,6 +36,7 @@ if(!require('cowplot')) {
 }
 ```
 
+
 ## 2. Load data
 
 ```{r}
@@ -43,6 +45,7 @@ biopsy <- read_csv("https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv")
 
 biopsy
 ```
+
 
 ## 3. Analysis and Results
 
