@@ -22,20 +22,19 @@ editor: visual
 
 -   Amanda Jimenez Lobato - s233150
 
-
 ## 1. Load libraries
 
 ```{r}
 library('tidyverse')
 library('broom')
 library('patchwork')
+library('ggrepel')
 
 if(!require('cowplot')) {
   install.packages('cowplot')
   library('cowplot')
 }
 ```
-
 
 ## 2. Load data
 
@@ -45,7 +44,6 @@ biopsy <- read_csv("https://wilkelab.org/classes/SDS348/data_sets/biopsy.csv")
 
 biopsy
 ```
-
 
 ## 3. Analysis and Results
 
@@ -91,6 +89,52 @@ From this PCA scores plot, we can observe a clear clustering according to the ou
 This clear differential clustering between the two data labels suggests that the dataset could be applied for further studies and applications such as machine learning algorithms for cancer diagnosis.
 
 ### 3.2. Rotation matrix
+
+We will proceed to extract the rotation matrix. The rotation matrix consist of a set of vectors which provide the direction of the principal components, therefore the rotation matrix contains the eigenvectors.
+
+```{r}
+pca_fit %>%
+  tidy(matrix = "rotation")
+```
+
+The roration matrix resulting from a PCA can be visualized in order to understand better how the variables contribute to the principal components and how this components are related to each other. This can be done by looking at the direction and length of the plotted arrows.
+
+```{r}
+# Arrow style for plotting
+arrow_style <- arrow(
+  angle = 20,
+  ends = "first",
+  type = "closed",
+  length = grid::unit(8, "pt")
+)
+
+# Plot the rotation matrix by plotting the loadings
+
+pca_fit %>%
+  tidy(matrix = "rotation") %>%
+  pivot_wider(names_from = "PC",
+              names_prefix = "PC",
+              values_from = "value") %>%
+  ggplot(aes(PC1,
+             PC2)) +
+  geom_segment(xend = 0,
+               yend = 0, 
+               arrow = arrow_style,
+               color = 'darkblue') +
+  geom_text_repel(aes(label = column),
+                  box.padding = 0.5,
+                  segment.color = "darkgreen",
+                  size = 4) +
+
+  xlim(-1.25, .5) +
+  ylim(-.5, 1) +
+  coord_fixed() + # fix aspect ratio to 1:1
+  theme_minimal_grid() +
+  theme(plot.title =  element_text(hjust = 0.5, size = 24, face = "bold")) +
+  labs(title = "PCA Rotation Matrix Plot", x = "PC1", y = "PC2")
+```
+
+From this plot we can see how many of the variables are closely related to each other, as is the case of `bare_nuclei` , `clump_thickness`, and `bland_chromatin`, where we can see how the rows have almost the same length and are pointing in the same direction. On the other hand, these variables are not related to `mitoses`, as the arrows are almost perpendicular (orthogonal), suggesting that they are uncorrelated. The length of the arrows represents the variance explained by each principal component, where longer arrows imply that the corresponsing variable captures more variance of the data, this is the case with the variable `mitoses`, which captures a great amount of the variance. Further analysis on the variance explained by each component can be done in order to identify which components capture the most variety of data.
 
 ### 3.3. Variance
 
