@@ -64,7 +64,7 @@ pca_fit <- biopsy %>%
   prcomp()
 ```
 
-Then, we reconstruct the data into the PC components and plot them, for analyzing possible relation/clustering according to the variable of interest (which in our study is the target/outcome related to the presence of a bening or malignant tumour).
+Then, we reconstruct the data into the PC (principal components) and plot them, for analyzing possible relation/clustering according to the variable of interest (which in our study is the target/outcome related to the presence of a benign or malignant tumor).
 
 ```{r}
 pca_fit %>%
@@ -97,7 +97,7 @@ pca_fit %>%
   tidy(matrix = "rotation")
 ```
 
-The roration matrix resulting from a PCA can be visualized in order to understand better how the variables contribute to the principal components and how this components are related to each other. This can be done by looking at the direction and length of the plotted arrows.
+The rotation matrix resulting from a PCA can be visualized in order to understand better how the variables contribute to the principal components and how these components are related to each other. This can be done by looking at the direction and length of the plotted arrows.
 
 ```{r}
 # Arrow style for plotting
@@ -134,8 +134,43 @@ pca_fit %>%
   labs(title = "PCA Rotation Matrix Plot", x = "PC1", y = "PC2")
 ```
 
-From this plot we can see how many of the variables are closely related to each other, as is the case of `bare_nuclei` , `clump_thickness`, and `bland_chromatin`, where we can see how the rows have almost the same length and are pointing in the same direction. On the other hand, these variables are not related to `mitoses`, as the arrows are almost perpendicular (orthogonal), suggesting that they are uncorrelated. The length of the arrows represents the variance explained by each principal component, where longer arrows imply that the corresponsing variable captures more variance of the data, this is the case with the variable `mitoses`, which captures a great amount of the variance. Further analysis on the variance explained by each component can be done in order to identify which components capture the most variety of data.
+From this plot we can see how many of the variables are closely related to each other, as is the case of `bare_nuclei` , `clump_thickness`, and `bland_chromatin`, where we can see how the rows have almost the same length and are pointing in the same direction. On the other hand, these variables are not related to `mitoses`, as the arrows are almost perpendicular (orthogonal), suggesting that they are uncorrelated. The length of the arrows represents the variance explained by each principal component, where longer arrows imply that the corresponding variable captures more variance of the data. This is the case with the variable `mitoses`, which captures a great amount of the variance. In the next section, we do a further analysis on the variance explained by each component can be done in order to identify which components capture more variety of data.
 
 ### 3.3. Variance
 
+Finally, we calculate the variance explained by each PC, to measure how much of the total variance is captured by each principal component. For such purpose, we use the `tidy()` function from broom.
+
+```{r}
+pca_fit %>%
+  tidy(matrix = "eigenvalues")
+```
+
+In the table, we can see that PC1 captures an ashtoningly high percentage of the total variance: 65.56 %, more than half. PC2 accounts for 8.62% of the variance, what implies that just by plotting the first 2 PCs, we are representing 74,17 % of the variance of the data.
+
+By looking at the cumulative variance, we can see that 6 PCs are enough to cover 90% of the variance, and that 9 PCs are required to represent 100% of the variance.
+
+To obtain a visual representation of this, we can plot the variance explained by each PC.
+
+```{r}
+
+pca_fit %>%
+  tidy(matrix = "eigenvalues") %>%
+  ggplot(aes(PC, percent)) +
+  geom_col(fill = "#56B4E9", alpha = 0.8) +
+  scale_x_continuous(breaks = 1:9) +
+  scale_y_continuous(
+    labels = scales::percent_format(),
+    expand = expansion(mult = c(0, 0.01))
+  ) +
+  theme_minimal_hgrid(12)
+```
+
+This graphs shows how PC1 accounts for a lot more variance than the rest of the PCs, and that the difference between PC2 and the rest of the PCs is not so high. Furthermore, the variance explained by PC9 is remarkably low (0.982%).
+
 ## 4. Discussion
+
+In this micro-report, we applied Principal Component Analysis (PCA) to the breast cancer dataset obtained from the University of Wisconsin Hospitals, Madison. The analysis, focusing on the first two principal components, revealed a clear separation between benign and malignant tumors. This observation suggests that the numerical attributes in the dataset hold valuable information that could be used by machine learning algorithms for cancer diagnosis.
+
+Moreover, the PCA rotation matrix allowed us to see how much each varaible contributed to the two first PCs, and how they were correlated or uncorrelated to one another.
+
+Finally, the calculation of the variance explained by each PC validated the previous work, since the two first PCs (the PCs we had been studying), accounted for a high amount of the total variance: 74.17%.
